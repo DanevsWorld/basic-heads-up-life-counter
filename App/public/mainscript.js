@@ -54,11 +54,15 @@ function cdPlayer2(value){
 
 //ROLL DICE
 function roll2Dice(){
-    for (var i = 1; i < 10; i++){
-        //for x iterations, print number, wait .2 seconds, run again
-        var die1 = Math.floor(Math.random() * 6) + 1;
-        var die2 = Math.floor(Math.random() * 6) + 1;
-        document.getElementById("die1").innerHTML = (die1);
-        document.getElementById("die2").innerHTML = (die2);
-    }
+    var die1 = Math.floor(Math.random() * 6) + 1;
+    var die2 = Math.floor(Math.random() * 6) + 1;
+    document.getElementById("die1").innerHTML = (die1);
+    document.getElementById("die2").innerHTML = (die2);
+}
+//ANIMATE DICE
+function animateDice(){
+    animation=setInterval(roll2Dice,20)
+    setTimeout(function(){ 
+        clearInterval( animation ); 
+    }, 1000);
 }

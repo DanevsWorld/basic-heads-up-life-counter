@@ -4,14 +4,12 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sandbox</title>
+    <title>Heads Up Life Counter</title>
     <link rel="stylesheet" href="app.css">
     <script src="mainscript.js"></script>
 </head>
 <body>
     <h1>Life Total Tracker</h1>
-    <h3>(Heads up version)</h3>
-
     <div class='parent'>
         <div id="player1background" class="outline">
             <h3>Player 1</h3>
@@ -22,11 +20,8 @@
                 <div class="button" onclick=lifeDown10()>-10</div><br>
             
             <div class="centered">
-                <button value="white" class="white" onclick=colorChange1(value)>White</button>
-                <button value="blue" class="blue" onclick=colorChange1(value)>Blue</button>
-                <button value="black" class="black" onclick=colorChange1(value)>Black</button>
-                <button value="red" class="red" onclick=colorChange1(value)>Red</button>
-                <button value="green" class="green" onclick=colorChange1(value)>Green</button>
+                <label for="p1color" style="color: white;">Pick a color:</label>
+                <input type="color" id="p1color" value="#000000" oninput=colorChange1(value)>
                 <hr/>
                 <div class="player1CD">
                     <h4>Commander Damage</h4>
@@ -35,7 +30,6 @@
                 </div>
             </div>
         </div>
-
         <div id="player2background" class="outline">
             <h3>Player 2</h3>
                 <div class="button" onclick=lifeUp2()>+1</div><br>
@@ -44,11 +38,8 @@
                 <div class="button" onclick=lifeDown2()>-1</div><br>
                 <div class="button" onclick=lifeDown102()>-10</div><br>
             <div class="centered">
-                <button value="white" class="white" onclick=colorChange2(value)>White</button>
-                <button value="blue" class="blue" onclick=colorChange2(value)>Blue</button>
-                <button value="black" class="black" onclick=colorChange2(value)>Black</button>
-                <button value="red" class="red" onclick=colorChange2(value)>Red</button>
-                <button value="green" class="green" onclick=colorChange2(value)>Green</button>
+                <label for="p2color" style="color: white;">Pick a color:</label>
+                <input type="color" id="p2color" value="#000000" oninput=colorChange2(value)>
             </div>
             <hr/>
             <div class="player2CD">
@@ -58,12 +49,10 @@
             </div>
         </div>
     </div>
-
     <div class="diceBackground">
         <h1 id="die1">X</h1>
         <h1 id="die2">X</h1>
-        <button onclick=roll2Dice();>Roll</button>
+        <button onclick=animateDice();>Roll</button>
     </div>
-
 </body>
 </html>
